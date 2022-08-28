@@ -40,9 +40,11 @@ def game():
     if start == "n":
         clr_terminal()
         print("Maybe next time")
-       
-def inventory():
-    print("##__Inventory__##")
+
+
+def init(): 
+
+    global INVENTORY
     inventory = []
 
 def clr_terminal():
@@ -91,14 +93,39 @@ def scene1():
     print("1 - Search the car..")
     print("2 - leave the the car..")
     print("Select 1/2")
-    car = input("=>")
+    car = input("=> ")
     if car == "1":
         searchCar()
     elif car == "2":
         leaveCar()    
 
 def searchCar():
-    print("")
+    print("You Search the car...")
+    print(" Do you open the glove compartment...")
+    print("Enter y/n.")
+    compartment = input("=> ")
+    if compartment == ("y"):
+        gloveCompartment()
+    elif compartment == ("n"):
+        scene1()   
+
+def gloveCompartment():
+    print("You open the glove compartment and find...\n")
+    print("Youn find a phone and torch..\n\n")
+
+    print("Would you like to add these item to your Inventory\n")
+    print("Enter y/n")
+    item = input("=> ")
+
+#create inventory add key items.
+    if item == "y":
+        print("phone added to Inventory")
+        leaveCar()
+
+    print("You pick up the phone and look intently at it.")
+    print("Hoping to jog any memory you have of the events that led you here.")
+
+
 
 
 def leaveCar():
