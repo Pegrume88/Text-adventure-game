@@ -42,16 +42,13 @@ def game():
         print("Maybe next time")
 
 
-def init(): 
-
-    global INVENTORY
-    inventory = []
 
 def clr_terminal():
     """
    Clear screen after each function is declared
     """
     os.system('clear')
+
 
 def introduction():
     """
@@ -119,15 +116,17 @@ def gloveCompartment():
 
 #create inventory add key items.
     if item == "y":
-        print("phone added to Inventory")
-        leaveCar()
+        print("You pick up the phone and look intently at it.")
+        print("Hoping to jog any memory you have of the events that led you here.")
+        phone()
 
-    print("You pick up the phone and look intently at it.")
-    print("Hoping to jog any memory you have of the events that led you here.")
+    
 
-
-
+def phone():
+    print("")
 
 def leaveCar():
     print("")
+
+
 game()
