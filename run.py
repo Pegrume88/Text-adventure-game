@@ -41,6 +41,9 @@ def game():
         clr_terminal()
         print("Maybe next time")
        
+def inventory():
+    print("##__Inventory__##")
+    inventory = []
 
 def clr_terminal():
     """
@@ -74,9 +77,30 @@ def introduction():
         game()
         
 
-
+# First scene
 def scene1():
-    print("test")
+    print("""
+    ###______CHAPTER__1____###\n
+    You Wake up in a car dazed confused and unsure of where you are.
+    There is heavy rain beating the car making it almost impossible
+    make out where you are.\n
+    you.....
 
 
+    """)
+    print("1 - Search the car..")
+    print("2 - leave the the car..")
+    print("Select 1/2")
+    car = input("=>")
+    if car == "1":
+        searchCar()
+    elif car == "2":
+        leaveCar()    
+
+def searchCar():
+    print("")
+
+
+def leaveCar():
+    print("")
 game()
