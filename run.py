@@ -1,7 +1,6 @@
 
-import sys
+
 import os
-import time
 import colorama
 from colorama import Fore, Back, Style
 
@@ -12,7 +11,7 @@ inventory = []
 
 
 def game():
-    print(R"""       
+    print(Fore.RED + R"""       
                  
 ░██╗░░░░░░░██╗██╗███╗░░██╗░█████╗░██╗░░██╗███████╗░██████╗████████╗███████╗██████╗░
 ░██║░░██╗░░██║██║████╗░██║██╔══██╗██║░░██║██╔════╝██╔════╝╚══██╔══╝██╔════╝██╔══██╗
@@ -41,10 +40,10 @@ def game():
 ██║╚██╔╝██║░░╚██╔╝░░░╚═══██╗░░░██║░░░██╔══╝░░██╔══██╗░░╚██╔╝░░
 ██║░╚═╝░██║░░░██║░░░██████╔╝░░░██║░░░███████╗██║░░██║░░░██║░░░
 ╚═╝░░░░░╚═╝░░░╚═╝░░░╚═════╝░░░░╚═╝░░░╚══════╝╚═╝░░╚═╝░░░╚═╝░░░
-                                                \n""")
+                                                """)
     
-    print("To start game enter y for yes and n for no.")                                         
-    start = input("=> ").lower().strip()
+    print(Fore.YELLOW + "To start game enter y for yes and n for no.")                                         
+    start = input(Fore.YELLOW + "=> ").lower().strip()
     if start == "y":
         clr_terminal()
         introduction()
@@ -117,7 +116,7 @@ def searchCar():
     print("You Search the car...")
     print(" Do you open the glove compartment...")
     print("Enter y/n.")
-    compartment = input("=> ").lower.strip
+    compartment = input("=> ").lower().strip()
     if compartment == ("y"):
         clr_terminal()
         gloveCompartment()
@@ -146,7 +145,7 @@ def gloveCompartment():
         clr_terminal()
         leaveCar()
        
-#accessing phone
+
 def phone():
     print("You pick up the phone and look intently at it.")
     print("""
@@ -190,10 +189,12 @@ def phone():
         Through the heave rain you can just about make out
         a large house shrouded in darkness.
         """)
-        
         leaveCar()
 
+
 def leaveCar():
+    clr_terminal()
+
     print("you you push the door open...")
     print("lightning cracks above your head!\n")
     print(" you sheild you face from the stinging rain,")
@@ -212,8 +213,10 @@ def leaveCar():
         clr_terminal()
         window()    
 
+
 # begining of chapter 2    
 def scene2():
+    clr_terminal()
     print(Fore.RED + r"""
                 _________Chapter_2_________ 
     You slowly open the door entering a dimly lit entrance.
@@ -222,9 +225,118 @@ def scene2():
     \n""")
     print(Fore.GREEN + "1 - A hallway straight infront of you.")
     print(Fore.GREEN + "2 - Living Room to your left.")
+    print(Fore.GREEN + "3 - A grand stair case leading to the next floor")
+    print(Fore.GREEN + "4 - What looks like a study to the right.\n")
+    print(Fore.YELLOW + "select where you want to go (1,2,3,4")
+    answer = input(Fore.YELLOW + "=>")
+    if answer == "1":
+        hallway()
+    elif answer == "2":
+        living_room()
+    elif answer == "3":
+        stairs()
+    elif answer == "4":
+        study()            
+
+
+def hallway():
+    clr_terminal()
+    print("""
+    
+    """)
+    print(Fore.GREEN + r"""
+    ______Hallway______\n
+    You make your way down to the door at the end of the hallway.
+    you notice the walls are filled with old portraits and paintings.
+    you.....\n\n
+    """)
+    print("1 - inspect the walls")
+    print("2 - carry on to the doorway at the end of the hallway\n\n")
+    print("select option (1/2)")
+    answer = input("=> ")
+    if answer == "1":
+        clr_terminal()
+        inspect_wall()
+    elif answer == "2":
+        clr_terminal()
+        print("You make your way down the hallway")
+        kitchen()
+
+
+def inspect_wall():
+    print(r"""
+    You walk up to a an old black and white picture of what looks like,
+    A family standing behind a sculpture of a skull.\n
+    There is something very erie about this picture...
+    """)
+   
+    print("You move on to the next the next picture\n")
+    print("""
+    Thiis seems to be an even even older picture but the similarities
+    between the two are uncanny. There is a family standing behind the
+    same sulpture of a skull.
+    """)
+    print(Fore.BLUE + "'This is just getting creepy now.'")
+    print("You call out....")
+    if phone in inventory == True:
+        print(Fore.BLUE + "'JAMES!!..JAMES!!...where is this guy.'")
+    if phone in inventory == False:
+        kitchen() 
+        print("You make your way to the room at at the end of the hallway")
+    
+
+def kitchen():
+    
+    print(Fore.RED + r"""
+    _______Kitchen______\n
+    You open the door enter what looks a kitchen, all be it missing 
+    all the modern appliances you would find in a kitchen today.
+    you flick the light switch and the several lights flicker but
+    only one turns on. 
+    You around the shadow shrouded kitchen and see...
+
+    """)
+    print("1 - a Backpack on the floor")
+    print("2 - A knife lying on the table")
+    print("3 - You return to the entrance\n")
+    print("Answer (1,2,3)")
+    answer = input("=> ")
+    if answer == "1":
+        clr_terminal()
+        backpack()
+    elif answer == "2":
+        clr_terminal()
+        knife()    
+
+
+def knife():
+    print("")
+
+
+def backpack():
+    print()
+
+
+def entrance():
+    print("")
+
+
+def living_room():
+    print("")
+
+
+def stairs():
+    print("")
+
+
+def study():
+    print("")
+
 
 def window():
-    print("")
+    print("You peer in through the window to see a dimly lit entrance")
+    print("You Enter the house")
+    scene2()
 
 
 game()
