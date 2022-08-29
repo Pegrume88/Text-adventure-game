@@ -4,6 +4,7 @@ import sys
 import os
 import time
 
+inventory = []
 
 def game():
     print("""       
@@ -30,9 +31,7 @@ def game():
 
 
                 """)
-
-
-    print("To start game enter y for yes and n for no.")                                           
+    print("To start game enter y for yes and n for no.")                                         
     start = input("=> ")
     if start == "y":
         clr_terminal()
@@ -41,6 +40,8 @@ def game():
         clr_terminal()
         print("Maybe next time")
 
+def addToInventory(item):
+    inventory.append(item)
 
 
 def clr_terminal():
@@ -92,8 +93,10 @@ def scene1():
     print("Select 1/2")
     car = input("=> ")
     if car == "1":
+        clr_terminal()
         searchCar()
     elif car == "2":
+        clr_terminal()
         leaveCar()    
 
 def searchCar():
@@ -102,9 +105,11 @@ def searchCar():
     print("Enter y/n.")
     compartment = input("=> ")
     if compartment == ("y"):
+        clr_terminal()
         gloveCompartment()
     elif compartment == ("n"):
-        scene1()   
+        clr_terminal()
+        leaveCar()  
 
 def gloveCompartment():
     print("You open the glove compartment and find...\n")
@@ -113,20 +118,30 @@ def gloveCompartment():
     print("Would you like to add these item to your Inventory\n")
     print("Enter y/n")
     item = input("=> ")
+    if item == "y":
+        clr_terminal()
+        addToInventory("phone" + "torch")
+        phone()
+        print(inventory)
 
 #create inventory add key items.
-    if item == "y":
-        print("You pick up the phone and look intently at it.")
-        print("Hoping to jog any memory you have of the events that led you here.")
-        phone()
+    if item == "n":
+        clr_terminal()
+        leaveCar()
+       
+        
 
     
-
+# accessing phone
 def phone():
-    print("")
+    print("You pick up the phone and look intently at it.")
+    print("Hoping to jog any memory you have of the events that led you here.\n")
+    print("you go into you your phone and see you have no signal")
+    
 
 def leaveCar():
-    print("")
+    print("you you push the door open...")
+    print("lightning cracks above your head!")
 
 
 game()
