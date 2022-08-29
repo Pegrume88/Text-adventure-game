@@ -1,39 +1,50 @@
 
-
 import sys
 import os
 import time
+import colorama
+from colorama import Fore, Back, Style
+
+#Initialize colorama
+colorama.init(autoreset=True)
 
 inventory = []
 
 
 def game():
-    print("""       
-                ==================================
-                =________WINCHESTER_HOUSE________=
-                =____________MYSTERY_____________= 
-                ==================================
-        
+    print(R"""       
+                 
+░██╗░░░░░░░██╗██╗███╗░░██╗░█████╗░██╗░░██╗███████╗░██████╗████████╗███████╗██████╗░
+░██║░░██╗░░██║██║████╗░██║██╔══██╗██║░░██║██╔════╝██╔════╝╚══██╔══╝██╔════╝██╔══██╗
+░╚██╗████╗██╔╝██║██╔██╗██║██║░░╚═╝███████║█████╗░░╚█████╗░░░░██║░░░█████╗░░██████╔╝
+░░████╔═████║░██║██║╚████║██║░░██╗██╔══██║██╔══╝░░░╚═══██╗░░░██║░░░██╔══╝░░██╔══██╗
+░░╚██╔╝░╚██╔╝░██║██║░╚███║╚█████╔╝██║░░██║███████╗██████╔╝░░░██║░░░███████╗██║░░██║
+░░░╚═╝░░░╚═╝░░╚═╝╚═╝░░╚══╝░╚════╝░╚═╝░░╚═╝╚══════╝╚═════╝░░░░╚═╝░░░╚══════╝╚═╝░░╚═╝
 
+██╗░░██╗░█████╗░██╗░░░██╗░██████╗███████╗
+██║░░██║██╔══██╗██║░░░██║██╔════╝██╔════╝
+███████║██║░░██║██║░░░██║╚█████╗░█████╗░░
+██╔══██║██║░░██║██║░░░██║░╚═══██╗██╔══╝░░
+██║░░██║╚█████╔╝╚██████╔╝██████╔╝███████╗
+╚═╝░░╚═╝░╚════╝░░╚═════╝░╚═════╝░╚══════╝
+
+░█████╗░███████╗
+██╔══██╗██╔════╝
+██║░░██║█████╗░░
+██║░░██║██╔══╝░░
+╚█████╔╝██║░░░░░
+░╚════╝░╚═╝░░░░░
+
+███╗░░░███╗██╗░░░██╗░██████╗████████╗███████╗██████╗░██╗░░░██╗
+████╗░████║╚██╗░██╔╝██╔════╝╚══██╔══╝██╔════╝██╔══██╗╚██╗░██╔╝
+██╔████╔██║░╚████╔╝░╚█████╗░░░░██║░░░█████╗░░██████╔╝░╚████╔╝░
+██║╚██╔╝██║░░╚██╔╝░░░╚═══██╗░░░██║░░░██╔══╝░░██╔══██╗░░╚██╔╝░░
+██║░╚═╝░██║░░░██║░░░██████╔╝░░░██║░░░███████╗██║░░██║░░░██║░░░
+╚═╝░░░░░╚═╝░░░╚═╝░░░╚═════╝░░░░╚═╝░░░╚══════╝╚═╝░░╚═╝░░░╚═╝░░░
                                                 \n""")
-    print(r"""
-
-                              _,                _.
-                            (  `)            (`  ).
-                        .=( ` ,_ `)    .-``(      ).
-                        (.__.:-`-_.'   (.,,(.       '`.
-                                            `--`--`'`
-                                ____.........__H_
-                            __/%%%%|%%%%%%%|%%%%\
-                        _ ()/%%|:II:|II:::II|:II:|_ _ _
-                        |-(()|--|:II:|II:H:II|:II:|-|-|-|
-                        `'.'"^  ^` "^ "^|"|^'"' `^`-.^~'
-                        Sher^  
-
-
-                """)
+    
     print("To start game enter y for yes and n for no.")                                         
-    start = input("=> ")
+    start = input("=> ").lower().strip()
     if start == "y":
         clr_terminal()
         introduction()
@@ -69,7 +80,7 @@ def introduction():
     # add picture of house here
 
     print("Are you ready to play y/n")
-    scene = input("=>")
+    scene = input("=>").lower().strip()
     if scene == "y":
         clr_terminal()
         scene1()
@@ -93,7 +104,7 @@ def scene1():
     print("1 - Search the car..")
     print("2 - leave the the car..")
     print("Select 1/2")
-    car = input("=> ")
+    car = input("=> ").lower().strip()
     if car == "1":
         clr_terminal()
         searchCar()
@@ -101,17 +112,19 @@ def scene1():
         clr_terminal()
         leaveCar()    
 
+
 def searchCar():
     print("You Search the car...")
     print(" Do you open the glove compartment...")
     print("Enter y/n.")
-    compartment = input("=> ")
+    compartment = input("=> ").lower.strip
     if compartment == ("y"):
         clr_terminal()
         gloveCompartment()
     elif compartment == ("n"):
         clr_terminal()
         leaveCar()  
+
 
 def gloveCompartment():
     """
@@ -122,7 +135,7 @@ def gloveCompartment():
 
     print("Would you like to add these item to your Inventory\n")
     print("Enter y/n")
-    item = input("=> ")
+    item = input("=> ").lower().strip()
     if item == "y":
         clr_terminal()
         print("items added to your inventory")
@@ -147,7 +160,7 @@ def phone():
     print("1 -Read message ")
     print("2 - Leave car\n\n")
     print("Select option 1 or 2 - \n")
-    option = input("=> ")
+    option = input("=> ").lower().strip()
     if option == "1":
         clr_terminal()
         print("Message from James")
@@ -191,16 +204,27 @@ def leaveCar():
     print("2 - Look through the window\n\n")
 
     print("Select Option enter 1 or 2")
-    option = input("=> ")
+    option = input("=> ").lower().strip()
     if option == "1":
         clr_terminal()
-        enter_house()
+        scene2()
     elif option == "2":
         clr_terminal()
         window()    
-    
-def enter_house():
+
+# begining of chapter 2    
+def scene2():
+    print(Fore.RED + r"""
+                _________Chapter_2_________ 
+    You slowly open the door entering a dimly lit entrance.
+    The interior of the house is old with signs of decay.
+    You look around squinting in the dim light and see... 
+    \n""")
+    print(Fore.GREEN + "1 - A hallway straight infront of you.")
+    print(Fore.GREEN + "2 - Living Room to your left.")
 
 def window():
+    print("")
+
 
 game()
