@@ -4,14 +4,14 @@ import os
 import colorama
 from colorama import Fore, Back, Style
 
-#Initialize colorama
+ #Initialize colorama
 colorama.init(autoreset=True)
 
 inventory = []
 
 
 def game():
-    print(Fore.RED + R"""       
+    print(Fore.RED + r"""       
                  
 ░██╗░░░░░░░██╗██╗███╗░░██╗░█████╗░██╗░░██╗███████╗░██████╗████████╗███████╗██████╗░
 ░██║░░██╗░░██║██║████╗░██║██╔══██╗██║░░██║██╔════╝██╔════╝╚══██╔══╝██╔════╝██╔══██╗
@@ -217,7 +217,7 @@ def leaveCar():
 # begining of chapter 2    
 def scene2():
     clr_terminal()
-    print(Fore.RED + r"""
+    print(Fore.RED + """
                 _________Chapter_2_________ 
     You slowly open the door entering a dimly lit entrance.
     The interior of the house is old with signs of decay.
@@ -244,7 +244,7 @@ def hallway():
     print("""
     
     """)
-    print(Fore.GREEN + r"""
+    print(Fore.GREEN + """
     ______Hallway______\n
     You make your way down to the door at the end of the hallway.
     you notice the walls are filled with old portraits and paintings.
@@ -259,7 +259,6 @@ def hallway():
         inspect_wall()
     elif answer == "2":
         clr_terminal()
-        print("You make your way down the hallway")
         kitchen()
 
 
@@ -306,15 +305,37 @@ def kitchen():
         backpack()
     elif answer == "2":
         clr_terminal()
-        knife()    
+        knife()
+    elif answer == "3":
+        clr_terminal()
+        entrance()        
 
 
 def knife():
-    print("")
+    print("You find a bloody knife jsut laying on the counter top.")
+    print("No traces of blood anywhere else in the kitchen")
+    print("The hairs on the back of your neck stand up")
+    print("A sense of terror washes over you\n\n")
 
+    print("What should you do next?\n")
+    print("1 - Check backpack")
+    print("2 - head back to entrance\n")
+    print("Enter choice (1,2)")
+    answer = input("=> ")
+    if answer == "1":
+        clr_terminal()
+        backpack()
+    elif answer == "2":
+        clr_terminal()
+        entrance()
+        
 
 def backpack():
-    print()
+    print("You pick up the backpack and empty the contents on the table.")
+    print("A voice recorder slams on the table.")
+    print(" you pick up the device and press play\n")
+
+    
 
 
 def entrance():
