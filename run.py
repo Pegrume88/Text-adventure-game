@@ -1,11 +1,10 @@
 
-
 import os
 import colorama
 from colorama import Fore, Back, Style
-
- #Initialize colorama
+from time import sleep
 colorama.init(autoreset=True)
+
 
 inventory = []
 
@@ -53,13 +52,27 @@ def game():
 
 
 def addToInventory(item):
+    """Collect items and add to inventory"""
     inventory.append(item)
 
 
+def input_validation(input_text, valid_values):
+    """Input validator to check for valid input values"""
+    input_is_valid = False
+    while input_is_valid is False:
+        value = input(input_text)
+        if value in valid_values:
+            input_is_valid = True
+        else:
+            print("Please enter a valid option")
+    return value            
+
+    
 def clr_terminal():
     """
-   Clear screen after each function is declared
+   Clear screen after each function is declared with a delay of 1 second
     """
+    sleep(1)
     os.system('clear')
 
 
@@ -67,19 +80,21 @@ def introduction():
     """
     Intro to game with path to the first scene
     """
-    print(".         ________________INTRODUCTION____________\n")
+  
     print("""   
-            Welcom to the Winchester House Mystery Game!
-            This is a text based mystery game. You will need to use text based 
-            answers to traverse through the game and solve the mystery.
+       ________________INTRODUCTION____________\n
+     Welcome to the Winchester House Mystery Game!
+     This is a text based mystery game. You will need to use text based 
+     answers to traverse through the game and solve the mystery.
     """)
     print("""
            ========================================\n
     """)
     # add picture of house here
 
-    print("Are you ready to play y/n")
-    scene = input("=>").lower().strip()
+    #print("Are you ready to play y/n")
+    #scene = input("=>").lower().strip()
+    scene = input_validation("Are you ready to play y/n", ["y", "n"])
     if scene == "y":
         clr_terminal()
         scene1()
@@ -130,15 +145,15 @@ def gloveCompartment():
     first location to pick up items
     """
     print("You open the glove compartment and find...\n")
-    print("Youn find a phone and torch..\n\n")
+    print("Youn find a phone..\n\n")
 
-    print("Would you like to add these item to your Inventory\n")
+    print("Would you like to add this item to your Inventory\n")
     print("Enter y/n")
     item = input("=> ").lower().strip()
     if item == "y":
         clr_terminal()
         print("items added to your inventory")
-        addToInventory("phone" "torch")
+        addToInventory("phone")
         print(inventory)
         phone()
     if item == "n":
@@ -158,8 +173,8 @@ def phone():
     print("Options....\n")
     print("1 -Read message ")
     print("2 - Leave car\n\n")
-    print("Select option 1 or 2 - \n")
-    option = input("=> ").lower().strip()
+    print("Select option (1,2) - \n")
+    option = input("=> ").strip()
     if option == "1":
         clr_terminal()
         print("Message from James")
@@ -204,8 +219,8 @@ def leaveCar():
     print("1 - open door")
     print("2 - Look through the window\n\n")
 
-    print("Select Option enter 1 or 2")
-    option = input("=> ").lower().strip()
+    print("Select Option enter (1,2)")
+    option = input("=> ").strip()
     if option == "1":
         clr_terminal()
         scene2()
@@ -263,7 +278,7 @@ def hallway():
 
 
 def inspect_wall():
-    print(r"""
+    print("""
     You walk up to a an old black and white picture of what looks like,
     A family standing behind a sculpture of a skull.\n
     There is something very erie about this picture...
@@ -276,16 +291,22 @@ def inspect_wall():
     same sulpture of a skull.
     """)
     print(Fore.BLUE + "'This is just getting creepy now.'")
-    
-    for phone in inventory(items):
-        print(Fore.BLUE + "'JAMES!!..JAMES!!...where is this guy.'")
-    if phone in inventory == False:
-        kitchen() 
-        print("You make your way to the room at at the end of the hallway")
-    
 
+   
+    answer = input("enter (1) to continue => ")
+    
+    if "phone" in inventory:
+        print("You call out")
+        print("'JAMES!!..JAMES!!....'")
+        print("no reply..'Where is he?'")
+        kitchen()
+    if answer == "1":
+        kitchen()
+
+   
 def kitchen():
     
+    clr_terminal()
     print(Fore.RED + """
     _______Kitchen______\n
     You open the door enter what looks a kitchen, all be it missing 
@@ -368,25 +389,88 @@ def backpack():
 
 
 def entrance():
-    print("")
+    print("Where would you like to go?\n\n")
 
-
+    print("1 - living room")
+    print("2 - study")
+    print("3 - stairs")
+    print("4 - Hallway")
+    print("5 - kitchen\n")
+    print("Enter (1,2,3,4,5)")
+    answer = input("=>").strip()
+    if answer == "1":
+        living_room()  
+    elif answer == "2":
+        study()
+    elif answer == "3":
+        stairs()
+    elif answer == "4":
+        hallway()
+    elif answer == "5":
+        kitchen()
+    
+    
 def living_room():
-    print("")
+    """
+    Living room sequence
+    """
+    print("""
+    ____Living_Room_______
+    You enter the room and notice the embers in the fire place 
+    are still glowing.The room is shrouded in shadow the feeling 
+    that something could jump out the many corners of darkness is 
+    unnerving.\n
+
+    You scan the room...
+    """)
+    print("what would you like to inspect.\n")
+    print("1- Fire place")
+    print("2 - Antique Grand clock")
+    print("3 - table")
+    print("4 - leave room\n")
+    print("Please select (1,2,3,4)")
+    answer = input("=> ").strip()
+    if answer == "1":
+        fire_place()
+    elif answer == "2":
+        clock()    
+    elif answer == "3":
+        table()    
+    elif answer == "4": 
+        entrance()   
+
+
+def fire_place():
+    print("test")
+
+
+def clock():
+    print("test")
+
+
+def table():
+    print("test")
 
 
 def stairs():
-    print("")
+    print("test")
 
 
 def study():
-    print("")
+    print("test")
+
+
+def attic():
+    print("test")
 
 
 def window():
     print("You peer in through the window to see a dimly lit entrance")
     print("You Enter the house")
-    scene2()
+    print("press 1 to continue")
+    answer = input("=> ").strip()
+    if answer == "1":
+        scene2()
 
 
 game()
