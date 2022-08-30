@@ -19,11 +19,11 @@ def game():
 ░░╚██╔╝░╚██╔╝░██║██║░╚███║╚█████╔╝██║░░██║███████╗██████╔╝░░░██║░░░███████╗██║░░██║
 ░░░╚═╝░░░╚═╝░░╚═╝╚═╝░░╚══╝░╚════╝░╚═╝░░╚═╝╚══════╝╚═════╝░░░░╚═╝░░░╚══════╝╚═╝░░╚═╝
 
-██╗░░██╗░█████╗░██╗░░░██╗░██████╗███████╗
+██╗░░██╗░█████╗░██╗░░░██╗░██████╗███████╗                  
 ██║░░██║██╔══██╗██║░░░██║██╔════╝██╔════╝
 ███████║██║░░██║██║░░░██║╚█████╗░█████╗░░
 ██╔══██║██║░░██║██║░░░██║░╚═══██╗██╔══╝░░
-██║░░██║╚█████╔╝╚██████╔╝██████╔╝███████╗
+██║░░██║╚█████╔╝╚██████╔╝██████╔╝███████╗.  
 ╚═╝░░╚═╝░╚════╝░░╚═════╝░╚═════╝░╚══════╝
 
 ░█████╗░███████╗
@@ -92,14 +92,12 @@ def introduction():
     """)
     # add picture of house here
 
-    #print("Are you ready to play y/n")
-    #scene = input("=>").lower().strip()
-    scene = input_validation("Are you ready to play y/n", ["y", "n"])
-    if scene == "y":
+    answer = input_validation("Are you ready to play y/n", ["y", "n"])
+    if answer == "y":
         clr_terminal()
         scene1()
         
-    if scene == "n":
+    if answer == "n":
         clr_terminal()
         game()
         
@@ -118,29 +116,29 @@ def scene1():
     print("1 - Search the car..")
     print("2 - leave the the car..")
     print("Select 1/2")
-    car = input("=> ").lower().strip()
-    if car == "1":
+    answer = input_validation("Select option (1, 2)", ["1", "2"])
+    if answer == "1":
         clr_terminal()
-        searchCar()
-    elif car == "2":
+        search_car()
+    elif answer == "2":
         clr_terminal()
-        leaveCar()    
+        leave_car()    
 
 
-def searchCar():
+def search_car():
     print("You Search the car...")
     print(" Do you open the glove compartment...")
     print("Enter y/n.")
-    compartment = input("=> ").lower().strip()
-    if compartment == ("y"):
+    answer = input_validation("=>", ["y", "n"])
+    if answer == ("y"):
         clr_terminal()
-        gloveCompartment()
-    elif compartment == ("n"):
+        glove_compartment()
+    elif answer == ("n"):
         clr_terminal()
-        leaveCar()  
+        leave_car()  
 
 
-def gloveCompartment():
+def glove_compartment():
     """
     first location to pick up items
     """
@@ -158,7 +156,7 @@ def gloveCompartment():
         phone()
     if item == "n":
         clr_terminal()
-        leaveCar()
+        leave_car()
        
 
 def phone():
@@ -173,9 +171,9 @@ def phone():
     print("Options....\n")
     print("1 -Read message ")
     print("2 - Leave car\n\n")
-    print("Select option (1,2) - \n")
-    option = input("=> ").strip()
-    if option == "1":
+    print("Select option (1,2) \n")
+    answer = input_validation("=> ", ["1", "2"])
+    if answer == "1":
         clr_terminal()
         print("Message from James")
         print("""
@@ -195,19 +193,24 @@ def phone():
         Through the heave rain you can just about make out
         a large house shrouded in darkness.
         """)
-        leaveCar()
+        answer = input_validation("Enter 1 to continue", ["1"])
+        if answer == "1":
+            leave_car()
 
-    if option == "2":
-        clr_terminal()
+    if answer == "2":
+        
         print("Still confused you peer through the windscreen of you car.")
         print("""
         Through the heave rain you can just about make out
         a large house shrouded in darkness.
         """)
-        leaveCar()
+        answer = input_validation("Enter 1 to continue", ["1"])
+        if answer == "1":
+            leave_car()
+        
 
 
-def leaveCar():
+def leave_car():
     clr_terminal()
 
     print("you you push the door open...")
@@ -220,11 +223,13 @@ def leaveCar():
     print("2 - Look through the window\n\n")
 
     print("Select Option enter (1,2)")
-    option = input("=> ").strip()
-    if option == "1":
+    answer = input_validation("=>", ["1", "2"]).strip()
+    if answer == "1":
+        leave_car()
+    if answer == "1":
         clr_terminal()
         scene2()
-    elif option == "2":
+    elif answer == "2":
         clr_terminal()
         window()    
 
@@ -243,7 +248,7 @@ def scene2():
     print(Fore.GREEN + "3 - A grand stair case leading to the next floor")
     print(Fore.GREEN + "4 - What looks like a study to the right.\n")
     print(Fore.YELLOW + "select where you want to go (1,2,3,4")
-    answer = input(Fore.YELLOW + "=>")
+    answer = input_validation("=>", ["1", "2", "3", "4"]).strip()
     if answer == "1":
         hallway()
     elif answer == "2":
@@ -268,7 +273,7 @@ def hallway():
     print("1 - inspect the walls")
     print("2 - carry on to the doorway at the end of the hallway\n\n")
     print("select option (1/2)")
-    answer = input("=> ")
+    answer = input_validation("=>", ["1", "2"]).strip()
     if answer == "1":
         clr_terminal()
         inspect_wall()
@@ -291,17 +296,17 @@ def inspect_wall():
     same sulpture of a skull.
     """)
     print(Fore.BLUE + "'This is just getting creepy now.'")
-
-   
-    answer = input("enter (1) to continue => ")
     
     if "phone" in inventory:
         print("You call out")
         print("'JAMES!!..JAMES!!....'")
         print("no reply..'Where is he?'")
         kitchen()
-    if answer == "1":
-        kitchen()
+    else: 
+        print("press 1 to continue")   
+        answer = input_validation("=>", ["1"]).strip() 
+        if answer == "1":
+            kitchen()
 
    
 def kitchen():
@@ -320,7 +325,8 @@ def kitchen():
     print("2 - A knife lying on the table")
     print("3 - You return to the entrance\n")
     print("Answer (1,2,3)")
-    answer = input("=> ")
+    answer = input_validation("=>", ["1", "2", "3"]).strip()
+
     if answer == "1":
         clr_terminal()
         backpack()
@@ -334,8 +340,8 @@ def kitchen():
 
 def knife():
 
-    print("You find a bloody knife jsut laying on the counter top.")
-    print("No traces of blood anywhere else in the kitchen")
+    print("You find a bloody knife just laying on the counter top.")
+    print("No traces of blood anywhere in the kitchen")
     print("The hairs on the back of your neck stand up")
     print("A sense of terror washes over you\n\n")
 
@@ -343,7 +349,7 @@ def knife():
     print("1 - Check backpack")
     print("2 - head back to entrance\n")
     print("Enter choice (1,2)")
-    answer = input("=> ")
+    answer = input_validation("=>", ["1", "2"]).strip()
     if answer == "1":
         clr_terminal()
         backpack()
@@ -429,46 +435,117 @@ def living_room():
     print("3 - table")
     print("4 - leave room\n")
     print("Please select (1,2,3,4)")
-    answer = input("=> ").strip()
+    answer = input_validation("=>", ["1", "2", "3", "4"]).strip()
     if answer == "1":
         fire_place()
     elif answer == "2":
         clock()    
     elif answer == "3":
         table()    
-    elif answer == "4": 
-        entrance()   
+    elif answer == "4":  
+        entrance()  
 
 
 def fire_place():
-    print("test")
+    print("""
+    _____Fire_Place___________________\n
+    You cautiously make your way over to teh fire place.
+    The warmth coming from the red embers helps,
+    settle your nerves.
+
+    You notice something petruding out of the wall
+    to the right of the fireplace. It looks like a skull
+    coming out of the wall.....
+    """)
+    print("What do you next?\n")
+    print("1 - Place your hand on the skull.")
+    print("2 - Antique Grand clock")
+    print("3 - table")
+    print("4 - leave room\n")
+    print("Please select (1,2,3,4)")
+
+    answer = input_validation("=>", ["1", "2", "3", "4"]).strip()
+    if answer == "1":
+        hidden_room()
+    elif answer == "2":
+        clock()    
+    elif answer == "3":
+        table()    
+    elif answer == "4":  
+        entrance()  
+
+def hidden_room():
+    print(r"""
+         .AMMMMMMMMMMA.          
+       .AV. :::.:.:.::MA.        
+      A' :..        : .:`A       
+     A'..              . `A.     
+    A' :.    :::::::::  : :`A    
+    M  .    :::.:.:.:::  . .M    
+    M  :   ::.:.....::.:   .M    
+    V : :.::.:........:.:  :V    
+   A  A:    ..:...:...:.   A A   
+  .V  MA:.....:M.::.::. .:AM.M   
+ A'  .VMMMMMMMMM:.:AMMMMMMMV: A  
+:M .  .`VMMMMMMV.:A `VMMMMV .:M: 
+ V.:.  ..`VMMMV.:AM..`VMV' .: V  
+  V.  .:. .....:AMMA. . .:. .V   
+   VMM...: ...:.MMMM.: .: MMV    
+       `VM: . ..M.:M..:::M'      
+         `M::. .:.... .::M       
+          M:.  :. .... ..M       
+          V:  M:. M. :M .V       
+          `V.:M.. M. :M.V'
+    """)
+    clr_terminal()
+
+    print("You place you hand on the skull..")
+    print("The skull pushes into the back of the wall..")
+    print("You hear a loud mechanical sounds coming from the wall.")
+    print("........\n")
+    print("The wll suddenly opens up revealing a hidden room.\n")
+    print("""
+    _______Hidden_Room_________
+    You step into the in the room. It resembles a small study,
+    there are peices of paper scattered around the room. You
+    take a closer look at the papers and notice various sketches of
+    symbols and what look like runes and what seems to be a letter\n.
+    """)
+    print("What do you do next..\n")
+    print("1 - Read letter")
+    print("2 - Search desk")
+    answer = input_validation("=>", ["1", "2"]).strip()
 
 
 def clock():
     print("test")
 
+    answer = input_validation("=>", ["1", "2"]).strip()
+
 
 def table():
     print("test")
+    answer = input_validation("=>", ["1", "2"]).strip()
+
 
 
 def stairs():
     print("test")
-
-
-def study():
-    print("test")
+    answer = input_validation("=>", ["1", "2"]).strip()
 
 
 def attic():
     print("test")
+    answer = input_validation("=>", ["1", "2"]).strip()
+
 
 
 def window():
     print("You peer in through the window to see a dimly lit entrance")
-    print("You Enter the house")
+    print("You Enter the house\n")
     print("press 1 to continue")
-    answer = input("=> ").strip()
+    answer = input_validation("=>", ["1"]).strip()
+
     if answer == "1":
         scene2()
 
