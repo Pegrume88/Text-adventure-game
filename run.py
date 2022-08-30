@@ -276,8 +276,8 @@ def inspect_wall():
     same sulpture of a skull.
     """)
     print(Fore.BLUE + "'This is just getting creepy now.'")
-    print("You call out....")
-    if phone in inventory == True:
+    
+    for phone in inventory(items):
         print(Fore.BLUE + "'JAMES!!..JAMES!!...where is this guy.'")
     if phone in inventory == False:
         kitchen() 
@@ -286,7 +286,7 @@ def inspect_wall():
 
 def kitchen():
     
-    print(Fore.RED + r"""
+    print(Fore.RED + """
     _______Kitchen______\n
     You open the door enter what looks a kitchen, all be it missing 
     all the modern appliances you would find in a kitchen today.
@@ -312,6 +312,7 @@ def kitchen():
 
 
 def knife():
+
     print("You find a bloody knife jsut laying on the counter top.")
     print("No traces of blood anywhere else in the kitchen")
     print("The hairs on the back of your neck stand up")
@@ -331,11 +332,39 @@ def knife():
         
 
 def backpack():
+
     print("You pick up the backpack and empty the contents on the table.")
     print("A voice recorder slams on the table.")
     print(" you pick up the device and press play\n")
 
-    
+    print("James' voice echos out the recorder....")
+    print("""
+    'I dont know how I found this place or how I got here'..
+    'This house must be over 200 yrs old'..
+    'Its in remarkebly good condition'
+
+    """)
+    print(" A loud BANG!!! shoots out the speaker on the recorder!!")
+    print("James calls out 'who's there!!'\n")
+    print("""
+    you hear what sound like foot steps getting closer closer through
+    the recorder....\n
+    """)
+    print("Then silence followed by an inhuman SCREAM!!\n")
+    print("The scream makes you drop the recorder.")
+    print(" It smashes into pieces on the hard kitchen floor.\n\n")
+
+    print("What do you do next.....\n")
+    print("1 - Inspect Knife")
+    print("2 - Leave kitchen\n")
+    print("Enter choice (1,2)")
+    answer = input("=> ")
+    if answer == "1":
+        clr_terminal()
+        knife()
+    elif answer == "2":
+        clr_terminal()
+        entrance()
 
 
 def entrance():
