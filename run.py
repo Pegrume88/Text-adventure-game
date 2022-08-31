@@ -217,7 +217,7 @@ def phone():
     print(Fore.GREEN + "1 -Read message ")
     print(Fore.GREEN + "2 - Leave car\n\n")
     print(Fore.YELLOW + "Select option (1,2) \n")
-    answer = input_validation(Fore.YELLOW + "=> ", ["1", "2"])
+    answer = input_validation(Fore.YELLOW + "=> \n", ["1", "2"])
     if answer == "1":
         clr_terminal()
         print(Fore.GREEN + "Message from James")
@@ -238,7 +238,8 @@ def phone():
         Through the heave rain you can just about make out
         a large house shrouded in darkness.
         """)
-        answer = input_validation(Fore.YELLOW + "Enter 1 to continue", ["1"])
+        print(Fore.YELLOW + "Enter 1 to continue")
+        answer = input_validation(Fore.YELLOW + "=> \n", ["1"])
         if answer == "1":
             leave_car()
 
@@ -249,7 +250,8 @@ def phone():
         Through the heave rain you can just about make out
         a large house shrouded in darkness.
         """)
-        answer = input_validation(Fore.YELLOW + "Enter 1 to continue", ["1"])
+        print("Enter 1 to continue")
+        answer = input_validation(Fore.YELLOW + "=> \n", ["1"])
         if answer == "1":
             leave_car()
             clr_terminal()
@@ -268,7 +270,7 @@ def leave_car():
     print(Fore.GREEN + "2 - Look through the window\n\n")
 
     print("Select Option enter (1,2)")
-    answer = input_validation(Fore.YELLOW + "=> ", ["1", "2"]).strip()
+    answer = input_validation(Fore.YELLOW + "=> \n", ["1", "2"]).strip()
     if answer == "1":
         scene1()
     elif answer == "2":
@@ -289,7 +291,7 @@ def scene2():
     print(Fore.GREEN + "2 - Living Room to your left.")
     print(Fore.GREEN + "3 - A grand stair case leading to the next floor\n")
     print(Fore.YELLOW + "select where you want to go (1,2,3")
-    answer = input_validation(Fore.YELLOW + "=> ", ["1", "2", "3"]).strip()
+    answer = input_validation(Fore.YELLOW + "=> \n", ["1", "2", "3"]).strip()
     if answer == "1":
         hallway()
         clr_terminal()
@@ -314,7 +316,7 @@ def hallway():
     print(Fore.GREEN + "2 - carry on to the doorway at the end of the hallway")
     print("")
     print("select option (1/2)")
-    answer = input_validation(Fore.YELLOW + "=> ", ["1", "2"]).strip()
+    answer = input_validation(Fore.YELLOW + "=>\n ", ["1", "2"]).strip()
     if answer == "1":
         inspect_wall()
     elif answer == "2":
@@ -346,14 +348,14 @@ def inspect_wall():
         kitchen()
     else:
         print(Fore.YELLOW + "press 1 to continue")
-        answer = input_validation(Fore.YELLOW + "=>", ["1"]).strip()
+        answer = input_validation(Fore.YELLOW + "=> \n", ["1"]).strip()
         if answer == "1":
+            clr_terminal()
             kitchen()
 
 
 def kitchen():
 
-    clr_terminal()
     print(Fore.RED + """
     _______Kitchen______\n
     You open the door enter what looks a kitchen, all be it missing
@@ -367,7 +369,7 @@ def kitchen():
     print(Fore.GREEN + "2 - A knife lying on the table")
     print(Fore.GREEN + "3 - You return to the entrance\n")
     print(Fore.GREEN + "Answer (1,2,3)")
-    answer = input_validation(Fore.YELLOW + "=>", ["1", "2", "3"]).strip()
+    answer = input_validation(Fore.YELLOW + "=> \n", ["1", "2", "3"]).strip()
     if answer == "1":
         clr_terminal()
         backpack()
@@ -390,7 +392,7 @@ def knife():
     print(Fore.GREEN + "1 - Check backpack")
     print(Fore.GREEN + "2 - head back to entrance\n")
     print(Fore.YELLOW + "Enter choice (1,2)")
-    answer = input_validation(Fore.YELLOW + "=> ", ["1", "2"]).strip()
+    answer = input_validation(Fore.YELLOW + "=> \n", ["1", "2"]).strip()
     if answer == "1":
         clr_terminal()
         backpack()
@@ -426,7 +428,7 @@ def backpack():
     print(Fore.GREEN + "1 - Inspect Knife")
     print(Fore.GREEN + "2 - Leave kitchen\n")
     print(Fore.YELLOW + "Enter choice (1,2)")
-    answer = input(Fore.YELLOW + "=> ")
+    answer = input(Fore.YELLOW + "=> \n")
     if answer == "1":
         clr_terminal()
         knife()
@@ -444,7 +446,7 @@ def entrance():
     print(Fore.GREEN + "3 - Hallway")
     print(Fore.GREEN + "4 - kitchen\n")
     print(Fore.YELLOW + "Enter (1,2,3,4)")
-    answer = input(Fore.YELLOW + "=> ").strip()
+    answer = input(Fore.YELLOW + "=>\n").strip()
     if answer == "1":
         living_room()
     elif answer == "2":
@@ -472,7 +474,7 @@ def living_room():
     print(Fore.GREEN + "1- Fire place")
     print(Fore.GREEN + "2 - leave room\n")
     print(Fore.YELLOW + "Please select (1,2)")
-    answer = input_validation(Fore.YELLOW + "=>", ["1", "2"]).strip()
+    answer = input_validation(Fore.YELLOW + "=> \n", ["1", "2"]).strip()
     if answer == "1":
         fire_place()
     elif answer == "2":
@@ -495,7 +497,7 @@ def fire_place():
     print(Fore.GREEN + "2 - leave room\n")
     print(Fore.YELLOW + "Please select (1,2)")
 
-    answer = input_validation(Fore.YELLOW + "=> ", ["1", "2"]).strip()
+    answer = input_validation(Fore.YELLOW + "=>\n ", ["1", "2"]).strip()
     if answer == "1":
         hidden_room()
     elif answer == "2":
@@ -535,7 +537,7 @@ def hidden_room():
     print(Fore.GREEN + "........\n")
     print(Fore.GREEN + "The wall suddenly opens up revealing a hidden room.\n")
     print(Fore.YELLOW + "Enter 1 to continue")
-    answer = input_validation(Fore.YELLOW + "=> ", ["1"]).strip()
+    answer = input_validation(Fore.YELLOW + "=>\n", ["1"]).strip()
     if answer == "1":
         clr_terminal()
         print(Fore.RED + """
@@ -548,7 +550,7 @@ def hidden_room():
         """)
         print(Fore.GREEN + "You search the desk")
         print(Fore.YELLOW + "Enter 1 to continue")
-        answer = input_validation(Fore.YELLOW + "=> ", ["1"]).strip()
+        answer = input_validation(Fore.YELLOW + "=>\n", ["1"]).strip()
         if answer == "1":
             clr_terminal()
             desk()
@@ -562,7 +564,7 @@ def desk():
     Something tells you to take the key.
     """)
     print(Fore.YELLOW + "Enter 1 to continue")
-    answer = input_validation(Fore.YELLOW + "=> ", ["1"]).strip()
+    answer = input_validation(Fore.YELLOW + "=>\n", ["1"]).strip()
     if answer == "1":
         clr_terminal()
         print("item added to your inventory")
@@ -586,7 +588,7 @@ def letter():
 
     print(Fore.YELLOW + "Enter (1,2) to continue")
 
-    answer = input_validation(Fore.YELLOW + "=> ", ["1", "2"]).strip()
+    answer = input_validation(Fore.YELLOW + "=>\n", ["1", "2"]).strip()
     if answer == "1":
         clr_terminal()
         clock()
@@ -606,7 +608,7 @@ def clock():
 
     print(Fore.YELLOW + "Enter (1,2) to conitnue.")
 
-    answer = input_validation(Fore.YELLOW + "=> ", ["1", "2"]).strip()
+    answer = input_validation(Fore.YELLOW + "=> \n", ["1", "2"]).strip()
     if answer == "1":
         clr_terminal()
         stairs()
@@ -629,7 +631,7 @@ def stairs():
     print(Fore.GREEN + "1 - Go to attic")
     print(Fore.GREEN + "2 - Back to entrance\n\n")
     print(Fore.YELLOW + "Enter (1,2) to conitnue.")
-    answer = input_validation(Fore.YELLOW + "=> ", ["1", "2"]).strip()
+    answer = input_validation(Fore.YELLOW + "=> \n", ["1", "2"]).strip()
     if answer == "1":
         attic()
     elif answer == "2":
@@ -652,7 +654,7 @@ def window():
     print(Fore.GREEN + "look though the window to see a dimly lit entrance")
     print(Fore.GREEN + "You Enter the house\n")
     print(Fore.YELLOW + "press 1 to continue\n")
-    answer = input_validation(Fore.YELLOW + "=> ", ["1"]).strip()
+    answer = input_validation(Fore.YELLOW + "=> \n", ["1"]).strip()
 
     if answer == "1":
         clr_terminal()
@@ -706,7 +708,7 @@ def end_2():
     print(Fore.CYAN + "'Who wont let us leave?'\n")
     print(Fore.GREEN + "James raises his hand and point behind you...\n\n")
     print(Fore.YELLOW + "Enter 1 to continue.\n")
-    answer = input_validation(Fore.YELLOW + "=> ", ["1"]).strip()
+    answer = input_validation(Fore.YELLOW + "=> \n", ["1"]).strip()
     if answer == "1":
         clr_terminal()
         the_demon()
@@ -736,7 +738,7 @@ def the_demon():
              `-._,-'   `-._______,-'   `-._,-'
     """)
     print(Fore.YELLOW + "Enter 1 to continue")
-    answer = input_validation(Fore.YELLOW + "=> ", ["1"]).strip()
+    answer = input_validation(Fore.YELLOW + "=> \n", ["1"]).strip()
     if answer == "1":
         clr_terminal()
         the_escape()
@@ -749,7 +751,7 @@ def the_escape():
     print(Fore.GREEN + "2 - Grab James and run to attic door.\n")
 
     print(Fore.YELLOW + "Enter 1/2 to continue.")
-    answer = input_validation(Fore.YELLOW + "=> ", ["1"]).strip()
+    answer = input_validation(Fore.YELLOW + "=> \n", ["1"]).strip()
     if answer == "1":
         clr_terminal()
         print(Fore.GREEN + """
@@ -758,7 +760,7 @@ def the_escape():
         the glass!
         """)
         print(Fore.YELLOW + "Enter 1 to continue.\n")
-        answer = input_validation(Fore.YELLOW + "=> ", ["1"]).strip()
+        answer = input_validation(Fore.YELLOW + "=> \n", ["1"]).strip()
         if answer == "1":
             print(Fore.GREEN + "You crash out the window, roll of the roof")
             print(Fore.GREEN + "Everything goes black")
@@ -781,14 +783,13 @@ def the_end_3():
 
     """)
     print(Fore.YELLOW + "Enter 1 to continue.\n")
-    answer = input_validation("=>", ["1"]).strip()
+    answer = input_validation("=>\n", ["1"]).strip()
     if answer == "1":
         clr_terminal()
         credits()
 
 
 def credits():
-
     """The end credits"""
     print(r"""
 ▀▀█▀▀ ▒█░▒█ ▒█▀▀▀    ▒█▀▀▀ ▒█▄░▒█ ▒█▀▀▄
@@ -797,7 +798,7 @@ def credits():
     """)
 
     print(Fore.YELLOW + "Enter 1 to continue.\n")
-    answer = input_validation(Fore.YELLOW + "=> ", ["1"]).strip()
+    answer = input_validation(Fore.YELLOW + "=> \n", ["1"]).strip()
     if answer == "1":
         clr_terminal()
         game()

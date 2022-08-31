@@ -1,31 +1,94 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+Winchester House of Mystery
 
-Welcome Pegrume88,
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+# Winchester House of Mystery
 
-## Reminders
+Winchester House Of Mystery is a Python terminal game, which runs using the code intitutute mock terminal
+deployed in Heroku.
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+The user makes their way through the Winchester House Of Mystery, exploring room and finding items that are needed to complete
+the game. This is a text based adventure game so you make you way by entering the correct keys.
 
-## Creating the Heroku app
+This is a mystery adventure game where you will have to solve the mystery of why you are at the Winchester house. you will need to
+collect items and explore the house to uncover clues.
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
 
-1. `heroku/python`
-2. `heroku/nodejs`
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+## Goals
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+* Create a fun interactive text based game.
+* To make the game intuitive to use, and provides satisfying feedback for the user.
 
-Connect your GitHub repository and deploy as normal.
 
-## Constraints
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
 
------
-Happy coding!
+
+
+------
+![Responsive](/readMe-images/responsive.png)
+
+
+
+------
+
+## Features
+
+### Existing Features
+
+* Multiple option for the play to make
+* Add item to inventory system
+* key items need to be collected in order to progress
+* If an item is in the users inventory they can recieve diferent responses through out the game
+* Acsii art added to help set the scenes and help the flow of the story.
+
+
+ 
+![end page](/readMe-images/endpage.png)
+
+
+
+
+## Future Features
+* Add a wider amount of items that can be used to progress in the game
+* Muliple endings depending on the path that the use takes.
+* A health bar system.
+
+
+
+
+  # Technologies Used
+* [Python](https://www.python.org/) 
+* [Heroku](https://www.w3.org/Style/CSS/Overview.en.html) 
+* [Github](https://github.com/) 
+
+
+## Testing
+
+I have manually tested this game by:
+
+* Run through the game and all its paths
+* Enter invalid keys to progress
+* Run the game through the Heroku terminal and my local terminal
+
+
+
+## To deploy the project
+
+
+
+
+
+
+### Credits/Media
+
+
+
+  * I refered to Python crash course 2nd Edition.
+  * All images were taken from open sourced acsii art generaters
+
+
+
+
+
+## Bugs
+
