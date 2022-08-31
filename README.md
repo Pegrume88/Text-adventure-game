@@ -1,5 +1,3 @@
-Winchester House of Mystery
-
 
 # Winchester House of Mystery
 
@@ -36,6 +34,7 @@ collect items and explore the house to uncover clues.
 ### Existing Features
 
 * Multiple option for the play to make
+* validator funtion to allow only coorect responses.
 * Add item to inventory system
 * key items need to be collected in order to progress
 * If an item is in the users inventory they can recieve diferent responses through out the game
@@ -56,9 +55,9 @@ collect items and explore the house to uncover clues.
 
 
   # Technologies Used
-* [Python](https://www.python.org/) 
-* [Heroku](https://www.w3.org/Style/CSS/Overview.en.html) 
-* [Github](https://github.com/) 
+* [Python](https://www.python.org/)
+* [Heroku](https://www.w3.org/Style/CSS/Overview.en.html)
+* [Github](https://github.com/)
 
 
 ## Testing
