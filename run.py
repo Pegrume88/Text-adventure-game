@@ -60,7 +60,7 @@ def introduction():
     """
     Intro to game with path to the first scene
     """
-
+    clr_terminal()
     print(Fore.RED + """
        ________________INTRODUCTION____________\n
      Welcome to the Winchester House Mystery Game!
@@ -168,7 +168,7 @@ def glove_compartment():
     first location to pick up items
     """
     print(Fore.GREEN + "You open the glove compartment and find...\n")
-    print(Fore.GREEN + "Youn find a phone..\n\n")
+    print(Fore.GREEN + "A phone..\n\n")
 
     print(Fore.GREEN + "Would you like to add this item to your Inventory\n")
     print(Fore.YELLOW + "Enter y/n")
@@ -222,6 +222,7 @@ def phone():
         print(Fore.YELLOW + "Enter 1 to continue")
         answer = input_validation(Fore.YELLOW + "=> \n", ["1"])
         if answer == "1":
+            clr_terminal()
             leave_car()
 
     if answer == "2":
@@ -234,8 +235,8 @@ def phone():
         print("Enter 1 to continue")
         answer = input_validation(Fore.YELLOW + "=> \n", ["1"])
         if answer == "1":
-            leave_car()
             clr_terminal()
+            leave_car()
 
 
 def leave_car():
@@ -253,7 +254,8 @@ def leave_car():
     print("Select Option enter (1,2)")
     answer = input_validation(Fore.YELLOW + "=> \n", ["1", "2"]).strip()
     if answer == "1":
-        scene1()
+        clr_terminal()
+        scene2()
     elif answer == "2":
         clr_terminal()
         window()
@@ -261,7 +263,6 @@ def leave_car():
 
 def scene2():
     """second scene enter the house"""
-    clr_terminal()
     print(Fore.RED + """
                 _________Chapter_2_________
     You slowly open the door entering a dimly lit entrance.
@@ -274,14 +275,14 @@ def scene2():
     print(Fore.YELLOW + "select where you want to go (1,2,3")
     answer = input_validation(Fore.YELLOW + "=> \n", ["1", "2", "3"]).strip()
     if answer == "1":
+        clr_terminal()
         hallway()
-        clr_terminal()
     elif answer == "2":
+        clr_terminal()
         living_room()
-        clr_terminal()
     elif answer == "3":
-        stairs()
         clr_terminal()
+        stairs()
 
 
 def hallway():
@@ -299,6 +300,7 @@ def hallway():
     print("select option (1/2)")
     answer = input_validation(Fore.YELLOW + "=>\n ", ["1", "2"]).strip()
     if answer == "1":
+        clr_terminal()
         inspect_wall()
     elif answer == "2":
         clr_terminal()
@@ -316,7 +318,7 @@ def inspect_wall():
 
     print(Fore.GREEN + "You move on to the next the next picture\n")
     print(Fore.GREEN + """
-    Thiis seems to be an even even older picture but the similarities
+    This seems to be an even even older picture but the similarities
     between the two are uncanny. There is a family standing behind the
     same sulpture of a skull.
     """)
@@ -326,7 +328,10 @@ def inspect_wall():
         print(Fore.GREEN + "You call out")
         print(Fore.CYAN + "'JAMES!!..JAMES!!....'")
         print(Fore.GREEN + "no reply..'Where is he?'")
-        kitchen()
+        answer = input_validation(Fore.YELLOW + "=> \n", ["1"]).strip()
+        if answer == "1":
+            clr_terminal()
+            kitchen()
     else:
         print(Fore.YELLOW + "press 1 to continue")
         answer = input_validation(Fore.YELLOW + "=> \n", ["1"]).strip()
@@ -343,7 +348,7 @@ def kitchen():
     all the modern appliances you would find in a kitchen today.
     you flick the light switch and the several lights flicker but
     only one turns on.
-    You around the shadow shrouded kitchen and see...
+    You look around the shadow shrouded kitchen and see...
 
     """)
     print(Fore.GREEN + "1 - a Backpack on the floor")
@@ -429,12 +434,16 @@ def entrance():
     print(Fore.YELLOW + "Enter (1,2,3,4)")
     answer = input(Fore.YELLOW + "=>\n").strip()
     if answer == "1":
+        clr_terminal()
         living_room()
     elif answer == "2":
+        clr_terminal()
         stairs()
     elif answer == "3":
+        clr_terminal()
         hallway()
     elif answer == "4":
+        clr_terminal()
         kitchen()
 
 
@@ -457,8 +466,10 @@ def living_room():
     print(Fore.YELLOW + "Please select (1,2)")
     answer = input_validation(Fore.YELLOW + "=> \n", ["1", "2"]).strip()
     if answer == "1":
+        clr_terminal()
         fire_place()
     elif answer == "2":
+        clr_terminal()
         entrance()
 
 
@@ -483,6 +494,7 @@ def fire_place():
 
     answer = input_validation(Fore.YELLOW + "=>\n ", ["1", "2"]).strip()
     if answer == "1":
+        clr_terminal()
         hidden_room()
     elif answer == "2":
         clr_terminal()
@@ -491,7 +503,7 @@ def fire_place():
 
 def hidden_room():
     """Hidden room to obtain key"""
-    clr_terminal()
+
     print(r"""
          .AMMMMMMMMMMA.
        .AV. :::.:.:.::MA.
@@ -617,8 +629,10 @@ def stairs():
     print(Fore.YELLOW + "Enter (1,2) to conitnue.")
     answer = input_validation(Fore.YELLOW + "=> \n", ["1", "2"]).strip()
     if answer == "1":
+        clr_terminal()
         attic()
     elif answer == "2":
+        clr_terminal()
         entrance()
 
 
@@ -647,6 +661,7 @@ def window():
 
 def the_end():
     """Last chapter"""
+    clr_terminal()
     print(Fore.RED + """
 _____Chapter_3___________________\n
 You climb up the and use a the key to unlock the hatch
@@ -663,14 +678,17 @@ figure standing in the corner.
 
     """)
     if "phone" in inventory:
-        clr_terminal()
         print(Fore.GREEN + "You grab you phone and turn on the torch.\n")
         print(Fore.GREEN + "You see your friend James standing in the corner.")
         print(Fore.CYAN + "'James..James are you ok'")
         print(Fore.CYAN + "'Where are we?.'")
         print(Fore.CYAN + "'What is going on?'\n")
         print(Fore.GREEN + "You get no response.")
-        end_2()
+        print("Enter 1 to continue.")
+        answer = input_validation(Fore.YELLOW + "=> \n", ["1"]).strip()
+        if answer == "1":
+            end_2()
+
     else:
         clr_terminal()
         print(Fore.GREEN + "You walk slowly to the figure in the corner.")
@@ -682,7 +700,7 @@ figure standing in the corner.
 
 def end_2():
     """Find james"""
-    clr_terminal()
+
     print(Fore.GREEN + "James turns and looks at you")
     print(Fore.GREEN + "He looks different..not himself.\n")
     print(Fore.GREEN + "You grab James and shake him..")
@@ -734,7 +752,7 @@ def the_escape():
     print(Fore.GREEN + "1 - Grab James and run to window")
     print(Fore.GREEN + "2 - Grab James and run to attic door.\n")
 
-    print(Fore.YELLOW + "Enter 1/2 to continue.")
+    print(Fore.YELLOW + "Enter 1 to continue.")
     answer = input_validation(Fore.YELLOW + "=> \n", ["1"]).strip()
     if answer == "1":
         clr_terminal()

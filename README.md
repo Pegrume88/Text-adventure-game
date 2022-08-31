@@ -68,6 +68,8 @@ I have manually tested this game by:
 * Enter invalid keys to progress
 * Run the game through the Heroku terminal and my local terminal
 
+The code was also run through PEP8 online and recieved an ALL RIGHT
+
 
 
 ## To deploy the project
@@ -86,7 +88,7 @@ I have manually tested this game by:
 
   * I refered to Python crash course 2nd Edition.
   * All images were taken from open sourced acsii art generaters
-  # [davidepesce.com](https://www.davidepesce.com/2020/02/26/13-tips-for-writing-a-good-text-adventure-game/)
+  * [davidepesce.com](https://www.davidepesce.com/2020/02/26/13-tips-for-writing-a-good-text-adventure-game/)
 
 
 
@@ -96,5 +98,5 @@ I have manually tested this game by:
 
 No bugs found while creating this game or in the testing.
 It did take me a while to work out what to do with trailing white spaces.
-i managed to get  an extension that highlighted all the white spaces and then I deleted
+I managed to get an extension that highlighted all the white spaces and then I deleted
 them manually.
