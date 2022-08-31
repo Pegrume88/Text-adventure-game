@@ -355,7 +355,7 @@ def inspect_wall():
 
 
 def kitchen():
-
+    """User enters the kitchen"""
     print(Fore.RED + """
     _______Kitchen______\n
     You open the door enter what looks a kitchen, all be it missing
@@ -482,6 +482,9 @@ def living_room():
 
 
 def fire_place():
+
+    """Where user interacts with fire to find hidden room"""
+
     print(Fore.RED + """
     _____Fire_Place___________________\n
     You cautiously make your way over to the fire place.
@@ -533,7 +536,7 @@ def hidden_room():
 
     print(Fore.GREEN + "You place you hand on the skull..")
     print(Fore.GREEN + "The skull pushes into the back of the wall..")
-    print(Fore.GREEN + "You hear a loud mechanical sounds coming from the wall.")
+    print(Fore.GREEN + "A loud mechanical sounds comes from the wall.")
     print(Fore.GREEN + "........\n")
     print(Fore.GREEN + "The wall suddenly opens up revealing a hidden room.\n")
     print(Fore.YELLOW + "Enter 1 to continue")
@@ -620,12 +623,12 @@ def clock():
 def stairs():
     """Stairs to connect to final room"""
     print(Fore.GREEN + "You make you way to up the elegent stair case.")
-    print(Fore.GREEN + "You something almost like someone whispered in you ear.")
+    print(Fore.GREEN + "You hear a shuffling noise.")
     print(Fore.GREEN + "You pause for a moment to make sense of it.")
     print(Fore.GREEN + "Everything goes quiet..Dead silence..")
     print(Fore.GREEN + "You make your way up the stairs")
     print(Fore.GREEN + "You hear a shuffling noise coming form above you.")
-    print(Fore.GREEN + "You see a thin ladder leading to what must be the attic\n")
+    print(Fore.GREEN + "You see a ladder leading to what must be the attic\n")
 
     print(Fore.GREEN + "what do you do next?\n")
     print(Fore.GREEN + "1 - Go to attic")
@@ -690,7 +693,7 @@ figure standing in the corner.
     else:
         clr_terminal()
         print(Fore.GREEN + "You walk slowly to the figure in the corner.")
-        print(Fore.GREEN + "You realize that the figure is your friend James.\n")
+        print(Fore.GREEN + "You realize that its your friend James.\n")
         print(Fore.CYAN + "'James are you ok'")
         print(Fore.CYAN + "'What is going on'")
         end_2()
@@ -716,7 +719,7 @@ def end_2():
 
 def the_demon():
     """Interact with demon"""
-    print(Fore.GREEN + "You turn around and see two piercing red eyes glowing.")
+    print(Fore.GREEN + "You turn around and see piercing red eyes glowing.")
 
     print(Fore.RED + r"""
                                ,-.
@@ -768,6 +771,8 @@ def the_escape():
 
 
 def the_end_3():
+    """Sequence after use escapes"""
+
     print(Fore.GREEN + """
     You are awakened by voice.....
 
@@ -786,10 +791,10 @@ def the_end_3():
     answer = input_validation("=>\n", ["1"]).strip()
     if answer == "1":
         clr_terminal()
-        credits()
+        end_credits()
 
 
-def credits():
+def end_credits():
     """The end credits"""
     print(r"""
 ▀▀█▀▀ ▒█░▒█ ▒█▀▀▀    ▒█▀▀▀ ▒█▄░▒█ ▒█▀▀▄

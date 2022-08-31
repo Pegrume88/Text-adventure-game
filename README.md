@@ -42,8 +42,7 @@ collect items and explore the house to uncover clues.
 * Acsii art added to help set the scenes and help the flow of the story.
 
 
- 
-![end page](/readMe-images/endpage.png)
+
 
 
 
@@ -74,7 +73,10 @@ I have manually tested this game by:
 
 ## To deploy the project
 
-
+* Go to settings in Heroku and select region
+* Then go to the deploy button.
+* link the git hub repository to Heroku
+* Manually upload the code from github
 
 
 
@@ -85,6 +87,7 @@ I have manually tested this game by:
 
   * I refered to Python crash course 2nd Edition.
   * All images were taken from open sourced acsii art generaters
+  # [davidepesce.com](https://www.davidepesce.com/2020/02/26/13-tips-for-writing-a-good-text-adventure-game/)
 
 
 
@@ -92,3 +95,7 @@ I have manually tested this game by:
 
 ## Bugs
 
+No bugs found while creating this game or in the testing.
+It did take me a while to work out what to do with trailing white spaces.
+i managed to get  an extension that highlighted all the white spaces and then I deleted
+them manually.
