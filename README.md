@@ -10,21 +10,12 @@ the game. This is a text based adventure game so you make you way by entering th
 This is a mystery adventure game where you will have to solve the mystery of why you are at the Winchester house. you will need to
 collect items and explore the house to uncover clues.
 
-
+![tite-page](/images/tite-page.png)
 
 ## Goals
 
 * Create a fun interactive text based game.
 * To make the game intuitive to use, and provides satisfying feedback for the user.
-
-
-
-
-
-
-------
-![Responsive](/readMe-images/responsive.png)
-
 
 
 ------
@@ -35,15 +26,13 @@ collect items and explore the house to uncover clues.
 
 * Multiple option for the play to make
 * validator funtion to allow only coorect responses.
+![options](/images/choice.png)
+
 * Add item to inventory system
 * key items need to be collected in order to progress
 * If an item is in the users inventory they can recieve diferent responses through out the game
 * Acsii art added to help set the scenes and help the flow of the story.
-
-
-
-
-
+![art](/images/acsii.png)
 
 
 ## Future Features
@@ -64,7 +53,7 @@ collect items and explore the house to uncover clues.
 
 I have manually tested this game by:
 
-* Run through the game and all its paths
+* Running the game and all its paths
 * Enter invalid keys to progress
 * Run the game through the Heroku terminal and my local terminal
 
@@ -92,11 +81,13 @@ The code was also run through PEP8 online and recieved an ALL RIGHT
 
 
 
-
-
 ## Bugs
 
 No bugs found while creating this game or in the testing.
 It did take me a while to work out what to do with trailing white spaces.
 I managed to get an extension that highlighted all the white spaces and then I deleted
 them manually.
+
+## Acknowledgments
+I would like to give a special shout out to my mentor Antonio for his pasients and help
+through out this project.

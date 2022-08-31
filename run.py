@@ -176,7 +176,7 @@ def glove_compartment():
     if item == "y":
         clr_terminal()
         print(Fore.GREEN + "items added to your inventory")
-        addToInventory(Fore.GREEN + "phone")
+        addToInventory("phone")
         print(inventory)
         phone()
     if item == "n":
@@ -661,7 +661,7 @@ def window():
 
 def the_end():
     """Last chapter"""
-    clr_terminal()
+
     print(Fore.RED + """
 _____Chapter_3___________________\n
 You climb up the and use a the key to unlock the hatch
@@ -687,15 +687,20 @@ figure standing in the corner.
         print("Enter 1 to continue.")
         answer = input_validation(Fore.YELLOW + "=> \n", ["1"]).strip()
         if answer == "1":
+            clr_terminal()
             end_2()
 
-    else:
-        clr_terminal()
+    elif "phone" not in inventory:
         print(Fore.GREEN + "You walk slowly to the figure in the corner.")
         print(Fore.GREEN + "You realize that its your friend James.\n")
         print(Fore.CYAN + "'James are you ok'")
         print(Fore.CYAN + "'What is going on'")
-        end_2()
+
+        print("Enter 1 to continue.")
+        answer = input_validation(Fore.YELLOW + "=> \n", ["1"]).strip()
+        if answer == "1":
+            clr_terminal()
+            end_2()
 
 
 def end_2():
@@ -742,15 +747,13 @@ def the_demon():
     print(Fore.YELLOW + "Enter 1 to continue")
     answer = input_validation(Fore.YELLOW + "=> \n", ["1"]).strip()
     if answer == "1":
-        clr_terminal()
         the_escape()
 
 
 def the_escape():
     """Escape the house"""
-    print(Fore.GREEN + "You grab james and....\n")
-    print(Fore.GREEN + "1 - Grab James and run to window")
-    print(Fore.GREEN + "2 - Grab James and run to attic door.\n")
+
+    print(Fore.GREEN + "Grab James and run to the window")
 
     print(Fore.YELLOW + "Enter 1 to continue.")
     answer = input_validation(Fore.YELLOW + "=> \n", ["1"]).strip()
@@ -764,6 +767,7 @@ def the_escape():
         print(Fore.YELLOW + "Enter 1 to continue.\n")
         answer = input_validation(Fore.YELLOW + "=> \n", ["1"]).strip()
         if answer == "1":
+            clr_terminal()
             print(Fore.GREEN + "You crash out the window, roll of the roof")
             print(Fore.GREEN + "Everything goes black")
             the_end_3()
