@@ -23,7 +23,7 @@ def game():
 ██║░░██║██╔══██╗██║░░░██║██╔════╝██╔════╝
 ███████║██║░░██║██║░░░██║╚█████╗░█████╗░░
 ██╔══██║██║░░██║██║░░░██║░╚═══██╗██╔══╝░░
-██║░░██║╚█████╔╝╚██████╔╝██████╔╝███████╗.  
+██║░░██║╚█████╔╝╚██████╔╝██████╔╝███████╗  
 ╚═╝░░╚═╝░╚════╝░░╚═════╝░╚═════╝░╚══════╝
 
 ░█████╗░███████╗
@@ -102,7 +102,6 @@ def introduction():
         game()
         
 
-# First scene
 def scene1():
     print("""
     ###______CHAPTER__1____###\n
@@ -209,7 +208,6 @@ def phone():
             leave_car()
         
 
-
 def leave_car():
     clr_terminal()
 
@@ -233,8 +231,7 @@ def leave_car():
         clr_terminal()
         window()    
 
-
-# begining of chapter 2    
+   
 def scene2():
     clr_terminal()
     print(Fore.RED + """
@@ -255,14 +252,12 @@ def scene2():
         living_room()
     elif answer == "3":
         stairs()
-    elif answer == "4":
-        study()            
-
+             
 
 def hallway():
     clr_terminal()
     print("""
-    
+
     """)
     print(Fore.GREEN + """
     ______Hallway______\n
@@ -288,7 +283,7 @@ def inspect_wall():
     A family standing behind a sculpture of a skull.\n
     There is something very erie about this picture...
     """)
-   
+
     print("You move on to the next the next picture\n")
     print("""
     Thiis seems to be an even even older picture but the similarities
@@ -335,7 +330,7 @@ def kitchen():
         knife()
     elif answer == "3":
         clr_terminal()
-        entrance()        
+        entrance()
 
 
 def knife():
@@ -356,7 +351,7 @@ def knife():
     elif answer == "2":
         clr_terminal()
         entrance()
-        
+
 
 def backpack():
 
@@ -398,7 +393,7 @@ def entrance():
     print("Where would you like to go?\n\n")
 
     print("1 - living room")
-    print("2 - study")
+    
     print("3 - stairs")
     print("4 - Hallway")
     print("5 - kitchen\n")
@@ -406,8 +401,7 @@ def entrance():
     answer = input("=>").strip()
     if answer == "1":
         living_room()  
-    elif answer == "2":
-        study()
+   
     elif answer == "3":
         stairs()
     elif answer == "4":
@@ -424,7 +418,7 @@ def living_room():
     ____Living_Room_______
     You enter the room and notice the embers in the fire place 
     are still glowing.The room is shrouded in shadow the feeling 
-    that something could jump out the many corners of darkness is 
+    that something could jump out the many corners of darkness is
     unnerving.\n
 
     You scan the room...
@@ -432,7 +426,7 @@ def living_room():
     print("what would you like to inspect.\n")
     print("1- Fire place")
     print("2 - Antique Grand clock")
-    print("3 - table")
+   
     print("4 - leave room\n")
     print("Please select (1,2,3,4)")
     answer = input_validation("=>", ["1", "2", "3", "4"]).strip()
@@ -440,8 +434,7 @@ def living_room():
         fire_place()
     elif answer == "2":
         clock()    
-    elif answer == "3":
-        table()    
+   
     elif answer == "4":  
         entrance()  
 
@@ -460,19 +453,16 @@ def fire_place():
     print("What do you next?\n")
     print("1 - Place your hand on the skull.")
     print("2 - Antique Grand clock")
-    print("3 - table")
     print("4 - leave room\n")
     print("Please select (1,2,3,4)")
 
     answer = input_validation("=>", ["1", "2", "3", "4"]).strip()
     if answer == "1":
         hidden_room()
-    elif answer == "2":
-        clock()    
-    elif answer == "3":
-        table()    
+      
     elif answer == "4":  
         entrance()  
+
 
 def hidden_room():
     print(r"""
@@ -508,37 +498,99 @@ def hidden_room():
     _______Hidden_Room_________
     You step into the in the room. It resembles a small study,
     there are peices of paper scattered around the room. You
-    take a closer look at the papers and notice various sketches of
-    symbols and what look like runes and what seems to be a letter\n.
+    take a closer look at the papers stroon over a small desk 
+    and notice various sketches of symbols and what look like runes 
+    and what seems to be a letter\n.
     """)
-    print("What do you do next..\n")
-    print("1 - Read letter")
-    print("2 - Search desk")
+    print("You search the desk")
+    print("Enter 1 to continue")
+    answer = input_validation("=>", ["1"]).strip()
+    if answer == "1":
+        desk()
+    
+
+def desk():
+    print("""
+    You search the desk and find a small box.
+    You open the box and find an old rusty key. 
+    Something tells you to take the key.
+    """)
+    answer = input_validation("=>", ["1"]).strip()
+    if answer == "1":
+        clr_terminal()
+        print("item added to your inventory")
+        addToInventory("key")
+        print(inventory)
+        letter()
+       
+           
+def letter():
+    print("""
+    You picj up the letter and attemp to read it in the dimly lit room.\n
+
+    the letter reads:
+    'A great evil has been released upon this house,
+    beware of GOZO!'
+    """)
+    print("What do you do next?\n")
+    print("1 - enspect the clock")
+    print("2 - return to entrance")
+
     answer = input_validation("=>", ["1", "2"]).strip()
+    if answer == "1":
+        clr_terminal()
+        clock()
+    elif answer == "2":
+        clr_terminal()
+        entrance()     
 
 
 def clock():
-    print("test")
+    print("You approach the old Atique clock and immediatly notice something weird.")
+    print("instead of number there are symbols, you dont recognise.\n")
+    print("You hear a noise coming from upstairs!!")
+    print("What do you do next?\n")
+    print("1 - Go to stair case")
+    print("2 - Head back to entrance\n")
 
     answer = input_validation("=>", ["1", "2"]).strip()
-
-
-def table():
-    print("test")
-    answer = input_validation("=>", ["1", "2"]).strip()
-
+    if answer == "1":
+        clr_terminal()
+        stairs()
+    elif answer == "2":
+        clr_terminal()
+        entrance()     
 
 
 def stairs():
-    print("test")
+    print("You make you way to up the elegent stair case.")
+    print("You something almost like someone whispered in you ear.")
+    print("You pause for a moment to make sense of it.")
+    print("Everything goes quiet..Dead silence..")
+    print("You make your way up the stairs")
+    print("You hear a shuffling noise coming form above you.")
+    print("You see a thin ladder leading to what must be the attic\n")
+
+    print("what do you do next?\n")
+    print("1 - Go to attic")
+    print("2 - Back to entrance")
+
     answer = input_validation("=>", ["1", "2"]).strip()
+    if answer == "1":
+        attic
+    elif answer == "2":
+        entrance()
 
 
 def attic():
-    print("test")
-    answer = input_validation("=>", ["1", "2"]).strip()
-
-
+    if "key" in inventory:
+        print("You use the key to open the hatch to the attic.")
+        the_end()
+    else:
+        clr_terminal()
+        print("You need a key to open this door")
+        entrance()
+            
 
 def window():
     print("You peer in through the window to see a dimly lit entrance")
@@ -548,6 +600,11 @@ def window():
 
     if answer == "1":
         scene2()
+
+
+def the_end():
+    print("""
+    """)
 
 
 game()
