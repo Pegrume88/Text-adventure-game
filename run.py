@@ -41,11 +41,11 @@ def game():
                                                 """)
 
     print(Fore.YELLOW + "To start game enter y for yes and n for no.")
-    start = input(Fore.YELLOW + "=> ").lower().strip()
-    if start == "y":
+    answer = input_validation(Fore.YELLOW + "=> \n", ["y", "n"]).strip()
+    if answer == "y":
         clr_terminal()
         introduction()
-    if start == "n":
+    if answer == "n":
         clr_terminal()
         print("Maybe next time")
 
@@ -134,7 +134,7 @@ jgs|^| ^  |================|^   | ^ ^^ ^ |  ^ ||
 
     """)
     print("Enter y to continue or n to exit")
-    answer = input_validation(Fore.YELLOW + "=> ", ["y", "n"])
+    answer = input_validation(Fore.YELLOW + "=> \n", ["y", "n"])
     if answer == "y":
         clr_terminal()
         scene1()
@@ -157,7 +157,7 @@ def scene1():
     print(Fore.GREEN + "1 - Search the car..")
     print(Fore.GREEN + "2 - leave the the car..\n\n")
     print(Fore.YELLOW + "Select 1/2")
-    answer = input_validation(Fore.YELLOW + "=> ", ["1", "2"])
+    answer = input_validation(Fore.YELLOW + "=> \n", ["1", "2"])
     if answer == "1":
         clr_terminal()
         search_car()
@@ -173,7 +173,7 @@ def search_car():
     print(Fore.GREEN + "You Search the car...")
     print(Fore.GREEN + " Do you open the glove compartment...")
     print(Fore.YELLOW + "Enter y/n.")
-    answer = input_validation(Fore.YELLOW + "=>", ["y", "n"])
+    answer = input_validation(Fore.YELLOW + "=> \n", ["y", "n"])
     if answer == ("y"):
         clr_terminal()
         glove_compartment()
@@ -191,7 +191,7 @@ def glove_compartment():
 
     print(Fore.GREEN + "Would you like to add this item to your Inventory\n")
     print(Fore.YELLOW + "Enter y/n")
-    item = input(Fore.YELLOW + "=> ").lower().strip()
+    item = input(Fore.YELLOW + "=> \n").lower().strip()
     if item == "y":
         clr_terminal()
         print(Fore.GREEN + "items added to your inventory")
