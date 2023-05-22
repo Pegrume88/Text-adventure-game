@@ -10,7 +10,7 @@ the game. This is a text based adventure game so you make you way by entering th
 This is a mystery adventure game where you will have to solve the mystery of why you are at the Winchester house. you will need to
 collect items and explore the house to uncover clues.
 
-![tite-page](/images/tite-page.png)
+* [Click here to play the game](https://text-game.onrender.com)
 
 ## Goals
 
